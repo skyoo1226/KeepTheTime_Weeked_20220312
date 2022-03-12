@@ -11,31 +11,27 @@
         tools:context=".MainActivity">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:text="아이디"
-            android:textSize="20sp"/>
+            android:text="아이디" />
 
         <EditText
             android:id="@+id/edtId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:hint="영문자" />
+            android:hint="이메일 양식으로 입력"
+            android:inputType="textEmailAddress"/>
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="비밀번호"
-            android:textSize="20sp"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"/>
 
         <EditText
             android:id="@+id/edtPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
             android:hint="비밀번호 입력" />
 
         <Button
@@ -45,7 +41,7 @@
             android:text="로그인" />
 
         <Button
-            android:id="@+id/btnSign"
+            android:id="@+id/btnSignUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="회원가입" />

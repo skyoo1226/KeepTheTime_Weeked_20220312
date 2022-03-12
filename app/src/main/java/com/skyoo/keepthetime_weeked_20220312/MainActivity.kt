@@ -1,5 +1,6 @@
 package com.skyoo.keepthetime_weeked_20220312
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -29,6 +30,13 @@ class MainActivity : AppCompatActivity() {
 
     fun setupEvents() {
 
+        binding.btnSignUp.setOnClickListener {
+
+            val myIntent = Intent(this, SignUpActivity::class.java)
+            startActivity(myIntent)
+
+        }
+
         binding.btnLogin.setOnClickListener {
 
             val inputId = binding.edtId.text.toString()
@@ -39,27 +47,28 @@ class MainActivity : AppCompatActivity() {
             val myRetrofit = ServerAPI.getRetrofit()
             val myApiList = myRetrofit.create(APIList::class.java)
 
-            myApiList.postRequestLogin(inputId, inputPw).enqueue(object : Callback<BasicResponse> {
+            myApiList.postRequestLogin(inputId, inputPw).enqueue(object :  Callback<BasicResponse> {
                 override fun onResponse(call: Call<BasicResponse>, response: Response<BasicResponse>) {
+//                    로그인 결과가 성공이던 / 실패던 응답 (response 변수) 자체는 돌아온 경우.
 
+//                    로그인에 성공까지 했다면, 그 응답의 본문은 BasicResponse 형태로 변환되어 있다.
                     if (response.isSuccessful) {
 
-                        val br = response.body()!!
+                        val br = response.body()!!  // 기본 분석 완료된 BasicResponse 를 br 변수에 담자.
 
                         Toast.makeText(this@MainActivity, br.message, Toast.LENGTH_SHORT).show()
+
                     }
                 }
 
                 override fun onFailure(call: Call<BasicResponse>, t: Throwable) {
-
+//                    아예 물리적으로 연결 자체를 실패.
                 }
             } )
         }
-
     }
 
     fun setValues() {
 
     }
-
 }
