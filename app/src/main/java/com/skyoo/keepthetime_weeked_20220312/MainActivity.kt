@@ -3,6 +3,7 @@ package com.skyoo.keepthetime_weeked_20220312
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.skyoo.keepthetime_weeked_20220312.api.APIList
 import com.skyoo.keepthetime_weeked_20220312.api.ServerAPI
@@ -41,7 +42,16 @@ class MainActivity : AppCompatActivity() {
             myApiList.postRequestLogin(inputId, inputPw).enqueue(object : Callback<BasicResponse> {
                 override fun onResponse(call: Call<BasicResponse>, response: Response<BasicResponse>) {
 
-                    Log.d("응답 확인", response.toString())
+                    if (response.isSuccessful) {
+
+                        val br = response.body()!!
+
+                        Toast.makeText(this@MainActivity, br.message, Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<BasicResponse>, t: Throwable) {
+
                 }
             } )
         }
