@@ -1,5 +1,6 @@
 package com.skyoo.keepthetime_weeked_20220312.api
 
+import com.skyoo.keepthetime_weeked_20220312.datas.BasicResponse
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.http.Field
@@ -15,6 +16,6 @@ interface APIList {
     fun postRequestLogin(
         @Field("Email") id: String,
         @Field("password") pw: String,
-    ) : Call<JSONObject>
+    ) : Call<BasicResponse>
 
 }

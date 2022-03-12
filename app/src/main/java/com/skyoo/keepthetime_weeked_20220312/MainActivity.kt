@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil
 import com.skyoo.keepthetime_weeked_20220312.api.APIList
 import com.skyoo.keepthetime_weeked_20220312.api.ServerAPI
 import com.skyoo.keepthetime_weeked_20220312.databinding.ActivityMainBinding
+import com.skyoo.keepthetime_weeked_20220312.datas.BasicResponse
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
@@ -37,8 +38,8 @@ class MainActivity : AppCompatActivity() {
             val myRetrofit = ServerAPI.getRetrofit()
             val myApiList = myRetrofit.create(APIList::class.java)
 
-            myApiList.postRequestLogin(inputId, inputPw).enqueue(object : Callback<JSONObject> {
-                override fun onResponse(call: Call<JSONObject>, response: Response<JSONObject>) {
+            myApiList.postRequestLogin(inputId, inputPw).enqueue(object : Callback<BasicResponse> {
+                override fun onResponse(call: Call<BasicResponse>, response: Response<BasicResponse>) {
 
                     Log.d("응답 확인", response.toString())
                 }
