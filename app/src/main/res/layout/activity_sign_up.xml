@@ -9,5 +9,11 @@
         android:layout_height="match_parent"
         tools:context=".SignUpActivity">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="가입할 이메일" />
+
+
     </LinearLayout>
 </layout>
