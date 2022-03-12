@@ -12,4 +12,5 @@ interface APIList {
         @Field("Email") id: String,
         @Field("password") pw: String,
     ) : Call<JSONObject>
+
 }
