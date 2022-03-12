@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.skyoo.keepthetime_weeked_20220312.api.APIList
 import com.skyoo.keepthetime_weeked_20220312.api.ServerAPI
+import retrofit2.create
 
 // 모든 화면이 공통으로 사용하는 것들
 // 상속 활용 : 우리화면 >  BaseActivity()  > AppCompatActivity()

@@ -6,8 +6,6 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.skyoo.keepthetime_weeked_20220312.databinding.ActivitySignUpBinding
 import com.skyoo.keepthetime_weeked_20220312.datas.BasicResponse
-import com.skyoo.keepthetime_weekend_20220312.databinding.ActivitySignUpBinding
-import com.skyoo.keepthetime_weekend_20220312.datas.BasicResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -34,9 +32,9 @@ class SignUpActivity : BaseActivity() {
 //            레트로핏 세팅 > 회원가입 진행.
             apiList.putRequestSignUp(inputEmail, inputPw, inputNickname).enqueue( object : Callback<BasicResponse> {
                 override fun onResponse(
-                    call: Call<BasicResponse>
+                    call: Call<BasicResponse>,
                     response: Response<BasicResponse>
-                ) {
+                )  {
 
                     if (response.isSuccessful) {
 
