@@ -13,6 +13,8 @@ class ServerAPI {
 
         private var retrofit : Retrofit? = null  // 초기에는 만들어두지 않는다.
 
+
+
 //        레트로핏 객체를 받아내는 기능 (함수)
 //        retrofit변수에 null이 들어있다면? => 새로 Retrofit 객체를 생성.
 //        이미 null이 아니라, 실체가 들어있다면? => 이미 들어있는 객체를 재활용.
