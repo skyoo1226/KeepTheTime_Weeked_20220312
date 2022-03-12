@@ -37,9 +37,12 @@ class MainActivity : AppCompatActivity() {
             val myRetrofit = ServerAPI.getRetrofit()
             val myApiList = myRetrofit.create(APIList::class.java)
 
-            myApiList.postRequestLogin(inputId, inputPw)
-            }
+            myApiList.postRequestLogin(inputId, inputPw).enqueue(object : Callback<JSONObject> {
+                override fun onResponse(call: Call<JSONObject>, response: Response<JSONObject>) {
 
+                    Log.d("응답 확인", response.toString())
+                }
+            } )
         }
 
     }
