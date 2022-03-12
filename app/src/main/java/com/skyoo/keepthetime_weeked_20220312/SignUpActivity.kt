@@ -18,6 +18,8 @@ class SignUpActivity : BaseActivity() {
 
     override fun setupEvents() {
 
+
+
     }
 
     override fun setValues() {
